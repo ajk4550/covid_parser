@@ -1,24 +1,6 @@
-# README
+# Covid Parser
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails application that parses the COVID data for Tompkins County and pushes that data as an SMS message.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Running the Parser
+bundle exec rake scraper:run
