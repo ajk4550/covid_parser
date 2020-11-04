@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Total tests</th>
+      <th>Pending results</th>
+      <th>Positive cases</th>
+      <th>Negative results</th>
+      <th>Recovered</th>
+      <th>Active cases</th>
+      <th>Active hospitalizations</th>
+      <th>Discharged today</th>
+      <th>Resident deaths</th>
+      <th>Non-resident deaths</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cases.each do |case| %>
+      <tr>
+        <td><%= case.date %></td>
+        <td><%= case.total_tests %></td>
+        <td><%= case.pending_results %></td>
+        <td><%= case.positive_cases %></td>
+        <td><%= case.negative_results %></td>
+        <td><%= case.recovered %></td>
+        <td><%= case.active_cases %></td>
+        <td><%= case.active_hospitalizations %></td>
+        <td><%= case.discharged_today %></td>
+        <td><%= case.resident_deaths %></td>
+        <td><%= case.non-resident_deaths %></td>
+        <td><%= link_to 'Show', case %></td>
+        <td><%= link_to 'Edit', edit_case_path(case) %></td>
+        <td><%= link_to 'Destroy', case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Case', new_case_path %>

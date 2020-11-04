@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  total_tests: 1
+  pending_results: 1
+  positive_cases: 1
+  negative_results: 1
+  recovered: 1
+  active_cases: 1
+  active_hospitalizations: 1
+  discharged_today: 1
+  resident_deaths: 1
+  non-resident_deaths: 1
+
+two:
+  date: MyString
+  total_tests: 1
+  pending_results: 1
+  positive_cases: 1
+  negative_results: 1
+  recovered: 1
+  active_cases: 1
+  active_hospitalizations: 1
+  discharged_today: 1
+  resident_deaths: 1
+  non-resident_deaths: 1

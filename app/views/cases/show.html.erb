@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @case.date %>
+</p>
+
+<p>
+  <strong>Total tests:</strong>
+  <%= @case.total_tests %>
+</p>
+
+<p>
+  <strong>Pending results:</strong>
+  <%= @case.pending_results %>
+</p>
+
+<p>
+  <strong>Positive cases:</strong>
+  <%= @case.positive_cases %>
+</p>
+
+<p>
+  <strong>Negative results:</strong>
+  <%= @case.negative_results %>
+</p>
+
+<p>
+  <strong>Recovered:</strong>
+  <%= @case.recovered %>
+</p>
+
+<p>
+  <strong>Active cases:</strong>
+  <%= @case.active_cases %>
+</p>
+
+<p>
+  <strong>Active hospitalizations:</strong>
+  <%= @case.active_hospitalizations %>
+</p>
+
+<p>
+  <strong>Discharged today:</strong>
+  <%= @case.discharged_today %>
+</p>
+
+<p>
+  <strong>Resident deaths:</strong>
+  <%= @case.resident_deaths %>
+</p>
+
+<p>
+  <strong>Non-resident deaths:</strong>
+  <%= @case.non-resident_deaths %>
+</p>
+
+<%= link_to 'Edit', edit_case_path(@case) %> |
+<%= link_to 'Back', cases_path %>

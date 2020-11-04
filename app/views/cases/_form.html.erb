@@ -1,0 +1,72 @@
+<%= form_with(model: case, local: true) do |form| %>
+  <% if case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(case.errors.count, "error") %> prohibited this case from being saved:</h2>
+
+      <ul>
+        <% case.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_tests %>
+    <%= form.number_field :total_tests %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pending_results %>
+    <%= form.number_field :pending_results %>
+  </div>
+
+  <div class="field">
+    <%= form.label :positive_cases %>
+    <%= form.number_field :positive_cases %>
+  </div>
+
+  <div class="field">
+    <%= form.label :negative_results %>
+    <%= form.number_field :negative_results %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recovered %>
+    <%= form.number_field :recovered %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active_cases %>
+    <%= form.number_field :active_cases %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active_hospitalizations %>
+    <%= form.number_field :active_hospitalizations %>
+  </div>
+
+  <div class="field">
+    <%= form.label :discharged_today %>
+    <%= form.number_field :discharged_today %>
+  </div>
+
+  <div class="field">
+    <%= form.label :resident_deaths %>
+    <%= form.number_field :resident_deaths %>
+  </div>
+
+  <div class="field">
+    <%= form.label :non-resident_deaths %>
+    <%= form.number_field :non-resident_deaths %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
