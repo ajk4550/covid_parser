@@ -21,22 +21,19 @@
   </thead>
 
   <tbody>
-    <% @cases.each do |case| %>
+    <% @cases.each do |case_date| %>
       <tr>
-        <td><%= case.date %></td>
-        <td><%= case.total_tests %></td>
-        <td><%= case.pending_results %></td>
-        <td><%= case.positive_cases %></td>
-        <td><%= case.negative_results %></td>
-        <td><%= case.recovered %></td>
-        <td><%= case.active_cases %></td>
-        <td><%= case.active_hospitalizations %></td>
-        <td><%= case.discharged_today %></td>
-        <td><%= case.resident_deaths %></td>
-        <td><%= case.non-resident_deaths %></td>
-        <td><%= link_to 'Show', case %></td>
-        <td><%= link_to 'Edit', edit_case_path(case) %></td>
-        <td><%= link_to 'Destroy', case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= case_date.date %></td>
+        <td><%= case_date.total_tests %></td>
+        <td><%= case_date.pending_results %></td>
+        <td><%= case_date.positive_cases %></td>
+        <td><%= case_date.negative_results %></td>
+        <td><%= case_date.recovered %></td>
+        <td><%= case_date.active_cases %></td>
+        <td><%= case_date.active_hospitalizations %></td>
+        <td><%= case_date.discharged_today %></td>
+        <td><%= case_date.resident_deaths %></td>
+        <td><%= case_date.nonresident_deaths %></td>
       </tr>
     <% end %>
   </tbody>
@@ -44,4 +41,3 @@
 
 <br>
 
-<%= link_to 'New Case', new_case_path %>
