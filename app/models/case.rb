@@ -25,7 +25,20 @@ class Case < ApplicationRecord
   end
 
   def self.to_sms(record)
-    sms = "Active Cases: #{record.active_cases} - Hospitalized: #{record.active_hospitalizations} - Discharged: #{record.discharged_today} - TC Deaths: #{record.resident_deaths} - NonTC Deaths: #{record.nonresident_deaths}"
+    # The previous record is used to calculate deltas
+    previous = Case.where(id: record.id - 1)
+    sms = if previous.empty?
+      "Active Cases: #{record.active_cases} - Hospitalized: #{record.active_hospitalizations} - Discharged: #{record.discharged_today} - TC Deaths: #{record.resident_deaths} - NonTC Deaths: #{record.nonresident_deaths}"
+    else
+      previous = previous.first
+      # Calculate the amount of new cases - Note, this should only increase.
+      previous_pos = previous.positive_cases
+      new_cases = record.positive_cases - previous_pos
+      # Calculate the number of recoveries - Note, this should only increase.
+      previous_recovery = previous.recovered
+      new_recoveries = record.recovered - previous_recovery
+      "Active Cases: #{record.active_cases} - New Cases: #{new_cases} - Recovered: #{new_recoveries} - Hospitialized: #{record.active_hospitalizations} - Discharged: #{record.discharged_today} - TC Deaths: #{record.resident_deaths} - NonTC Deaths: #{record.nonresident_deaths}"
+    end
     sms
   end
 
